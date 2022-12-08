@@ -7,32 +7,158 @@ namespace SpriteKind {
     export const ship2 = SpriteKind.create()
     export const ship3 = SpriteKind.create()
     export const supplydrop = SpriteKind.create()
+    export const turret = SpriteKind.create()
 }
 controller.up.onEvent(ControllerButtonEvent.Repeated, function () {
     if (can_attack == 1) {
         if (canattack == 1) {
-            canattack = 0
-            B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . 1 1 . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                `, spaceship_player, 0, -300)
-            timer.after(100, function () {
-                canattack = 1
-            })
+            if (ship_class == 1) {
+                canattack = 0
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, 0, -300)
+                timer.after(100, function () {
+                    canattack = 1
+                })
+            } else if (ship_class == 2) {
+                canattack = 0
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, 0, -300)
+                timer.after(50, function () {
+                    canattack = 1
+                })
+            } else if (ship_class == 3) {
+                canattack = 0
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . 1 1 . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, 0, -300)
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . 1 1 . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, 0, -300)
+                timer.after(50, function () {
+                    canattack = 1
+                })
+            } else if (ship_class == 4) {
+                canattack = 0
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, 0, -300)
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . 1 1 . . . . . . . . . . 
+                    . . . . 1 1 . . . . . . . . . . 
+                    . . . . 1 1 1 . . . . . . . . . 
+                    . . . . 1 1 1 . . . . . . . . . 
+                    . . . . . 1 1 1 . . . . . . . . 
+                    . . . . . 1 1 1 . . . . . . . . 
+                    . . . . . . 1 1 1 . . . . . . . 
+                    . . . . . . 1 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, -100, -300)
+                B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . 1 1 . . . . 
+                    . . . . . . . . . . 1 1 . . . . 
+                    . . . . . . . . . 1 1 1 . . . . 
+                    . . . . . . . . . 1 1 1 . . . . 
+                    . . . . . . . . 1 1 1 . . . . . 
+                    . . . . . . . . 1 1 1 . . . . . 
+                    . . . . . . . 1 1 1 . . . . . . 
+                    . . . . . . . 1 1 1 . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . 1 1 . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    . . . . . . . . . . . . . . . . 
+                    `, spaceship_player, 100, -300)
+                timer.after(100, function () {
+                    canattack = 1
+                })
+            }
         }
     }
 })
@@ -235,7 +361,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.asteroid, function (sprite, othe
     })
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.asteriod_splitter, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
+    info.changeScoreBy(100)
     otherSprite.setKind(SpriteKind.placeholder)
     otherSprite.setVelocity(0, 0)
     sprite.destroy()
@@ -472,7 +598,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.asteriod_splitter, function (spr
     })
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.asteroid_splitter2, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
+    info.changeScoreBy(100)
     otherSprite.setKind(SpriteKind.placeholder)
     otherSprite.setVelocity(0, 0)
     sprite.destroy()
@@ -628,11 +754,237 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.asteroid_splitter2, function
         otherSprite.destroy()
     })
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-	
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ship2, function (sprite, otherSprite) {
+    spaceship_player.setImage(img`
+        ......99..99......
+        ......99..99......
+        ....1199..9911....
+        ....1999..9991....
+        ..119999..999911..
+        ..111199..991111..
+        ....1111991111....
+        ....1111111111....
+        ..1111..11..1111..
+        ..1111..11..1111..
+        ....1111991111....
+        ....1999999991....
+        ..11199999999111..
+        ..11111111111111..
+        ..11..11..11..11..
+        ..11..11..11..11..
+        9911..99..99..1199
+        9911..99..99..1199
+        `)
+    ship_class = 3
+    otherSprite.destroy()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.supplydrop, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    if (lives == 3) {
+        hp_bar.setImage(img`
+            ....77.........77.........77.........77....
+            ....77.........77.........77.........77....
+            77..77..77.77..77..77.77..77..77.77..77..77
+            77..77..77.77..77..77.77..77..77.77..77..77
+            ..777777.....777777.....777777.....777777..
+            ..777777.....777777.....777777.....777777..
+            7777..7777.7777..7777.7777..7777.7777..7777
+            7777..7777.7777..7777.7777..7777.7777..7777
+            ..777777.....777777.....777777.....777777..
+            ..777777.....777777.....777777.....777777..
+            7777777777.7777777777.7777777777.7777777777
+            7777777777.7777777777.7777777777.7777777777
+            77..77..77.77..77..77.77..77..77.77..77..77
+            77..77..77.77..77..77.77..77..77.77..77..77
+            `)
+        lives += 1
+    } else if (lives == 2) {
+        hp_bar.setImage(img`
+            ....55.........55.........55...............
+            ....55.........55.........55...............
+            55..55..55.55..55..55.55..55..55...........
+            55..55..55.55..55..55.55..55..55...........
+            ..555555.....555555.....555555.............
+            ..555555.....555555.....555555.............
+            5555..5555.5555..5555.5555..5555...........
+            5555..5555.5555..5555.5555..5555...........
+            ..555555.....555555.....555555.............
+            ..555555.....555555.....555555.............
+            5555555555.5555555555.5555555555...........
+            5555555555.5555555555.5555555555...........
+            55..55..55.55..55..55.55..55..55...........
+            55..55..55.55..55..55.55..55..55...........
+            `)
+        lives += 1
+    } else if (lives == 1) {
+        hp_bar.setImage(img`
+            ....44.........44..........................
+            ....44.........44..........................
+            44..44..44.44..44..44......................
+            44..44..44.44..44..44......................
+            ..444444.....444444........................
+            ..444444.....444444........................
+            4444..4444.4444..4444......................
+            4444..4444.4444..4444......................
+            ..444444.....444444........................
+            ..444444.....444444........................
+            4444444444.4444444444......................
+            4444444444.4444444444......................
+            44..44..44.44..44..44......................
+            44..44..44.44..44..44......................
+            `)
+        lives += 1
+    } else {
+        info.changeScoreBy(100)
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ship3, function (sprite, otherSprite) {
+    spaceship_player.setImage(img`
+        . . . . . 9 9 9 9 . . . . . 
+        . . . . . 9 1 1 9 . . . . . 
+        . . . . . . 9 9 . . . . . . 
+        . . . . . 9 1 1 9 . . . . . 
+        . . 9 9 . 9 9 9 9 . 9 9 . . 
+        . . 9 1 . 9 1 1 9 . 1 9 . . 
+        . . . . 9 1 1 1 1 9 . . . . 
+        . . . . 1 9 9 9 9 1 . . . . 
+        . . 9 1 1 9 . . 9 1 1 9 . . 
+        . . 9 1 1 9 . . 9 1 1 9 . . 
+        . . . . 1 9 9 9 9 1 . . . . 
+        . . . . 1 9 1 1 9 1 . . . . 
+        . . 9 1 9 9 9 9 9 9 1 9 . . 
+        . . 1 9 1 1 1 1 1 1 9 1 . . 
+        . . 1 9 . . 1 1 . . 9 1 . . 
+        . . 1 9 . . 1 1 . . 9 1 . . 
+        9 1 1 9 . . 1 1 . . 9 1 1 9 
+        9 9 9 1 . . 9 9 . . 1 9 9 9 
+        `)
+    ship_class = 4
+    otherSprite.destroy()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ship1, function (sprite, otherSprite) {
+    spaceship_player.setImage(img`
+        . . . . . . 9 9 . . . . . . 
+        . . . . . . 1 1 . . . . . . 
+        . . . . . . 9 9 . . . . . . 
+        . . . . . . 1 1 . . . . . . 
+        . . 1 1 . . 9 9 . . 1 1 . . 
+        . . 1 1 . . 1 1 . . 1 1 . . 
+        . . . . 1 1 1 1 1 1 . . . . 
+        . . . . 1 1 1 1 1 1 . . . . 
+        . . 1 1 1 1 . . 1 1 1 1 . . 
+        . . 1 1 1 1 . . 1 1 1 1 . . 
+        . . . . 1 1 1 1 1 1 . . . . 
+        . . . . 1 1 1 1 1 1 . . . . 
+        . . 1 1 1 1 1 1 1 1 1 1 . . 
+        . . 1 1 1 1 1 1 1 1 1 1 . . 
+        . . 1 1 . . 1 1 . . 1 1 . . 
+        . . 1 1 . . 1 1 . . 1 1 . . 
+        1 1 1 1 . . 1 1 . . 1 1 1 1 
+        1 1 1 1 . . 1 1 . . 1 1 1 1 
+        `)
+    ship_class = 2
+    otherSprite.destroy()
+})
+scene.onHitWall(SpriteKind.asteroid, function (sprite, location) {
+    animation.runImageAnimation(
+    sprite,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . . 2 . . . . 2 . . . . . 
+        . . . 2 . 2 . . . . 2 . 2 . . . 
+        . . . 2 . 2 . . . . 2 . 2 . . . 
+        . . . . . 2 . . . . 2 . . . . . 
+        . . . . . . 2 2 2 2 . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . 2 . . . . 2 2 . . . . 2 . . 
+        . . . 2 . . . 2 2 . . . 2 . . . 
+        . . . . 2 . . . . . . 2 . . . . 
+        . . . . . . 2 . . 2 . . . . . . 
+        . . . . . 2 . . . . 2 . . . . . 
+        . 2 2 2 . . . . . . . . 2 2 2 . 
+        . 2 2 2 . . . . . . . . 2 2 2 . 
+        . . . . . 2 . . . . 2 . . . . . 
+        . . . . . . 2 . . 2 . . . . . . 
+        . . . . 2 . . . . . . 2 . . . . 
+        . . . 2 . . . 2 2 . . . 2 . . . 
+        . . 2 . . . . 2 2 . . . . 2 . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . 2 . . . . 2 2 . . . . 2 . . 
+        . . . 2 . . . . . . . . 2 . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . 2 2 . . . . . . . . . . 2 2 . 
+        . 2 2 . . . . . . . . . . 2 2 . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . 2 . . . . . . . . 2 . . . 
+        . . 2 . . . . 2 2 . . . . 2 . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . 2 . . . . . . . . . . 2 . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . 2 . . . . . . . . . . . . 2 . 
+        . 2 . . . . . . . . . . . . 2 . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . 2 . . . . . . . . . . 2 . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `],
+    100,
+    false
+    )
+    lives += -1
+    timer.after(600, function () {
+        sprite.destroy()
+    })
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.asteroid, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
+    info.changeScoreBy(10)
     otherSprite.setKind(SpriteKind.placeholder)
     otherSprite.setVelocity(0, 0)
     sprite.destroy()
@@ -738,8 +1090,11 @@ let space_ship2: Sprite = null
 let space_ship1: Sprite = null
 let mini_asteroid: Sprite = null
 let B_u_l_L_E_t: Sprite = null
+let mini_turret: Sprite = null
 let hp_bar: Sprite = null
 let can_attack = 0
+let ship_class = 0
+let lives = 0
 let canattack = 0
 let spaceship_player: Sprite = null
 spaceship_player = sprites.create(img`
@@ -889,7 +1244,8 @@ scene.centerCameraAt(0, 150)
 spaceship_player.setVelocity(0, 50)
 canattack = 0
 spaceship_player.startEffect(effects.fire, 2100)
-let lives = 4
+lives = 4
+ship_class = 1
 timer.after(2100, function () {
     controller.moveSprite(spaceship_player, 100, 0)
     spaceship_player.setStayInScreen(true)
@@ -912,6 +1268,27 @@ timer.after(2100, function () {
         77..77..77.77..77..77.77..77..77.77..77..77
         `, SpriteKind.Player)
     tiles.placeOnRandomTile(hp_bar, assets.tile`myTile2`)
+    for (let value of tiles.getTilesByType(assets.tile`myTile4`)) {
+        mini_turret = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . 1 . . . . . . . . 
+            . . . . . . . 1 . . . . . . . . 
+            . . . . . . 1 1 1 . . . . . . . 
+            . . . . . 1 1 . 1 1 . . . . . . 
+            . . . . . . 1 1 1 . . . . . . . 
+            . . . . . 1 1 1 1 1 . . . . . . 
+            . . . . . 1 . 1 . 1 . . . . . . 
+            `, SpriteKind.turret)
+        tiles.placeOnTile(mini_turret, value)
+    }
 })
 game.onUpdate(function () {
     if (lives == 0) {
@@ -972,7 +1349,7 @@ game.onUpdate(function () {
             `)
     }
 })
-game.onUpdateInterval(2000, function () {
+game.onUpdateInterval(5000, function () {
     if (Math.percentChance(10)) {
         space_ship1 = sprites.create(img`
             . . . . . . 9 9 . . . . . . 
@@ -1065,7 +1442,29 @@ game.onUpdateInterval(2000, function () {
         supply_drop.vy = 10
     }
 })
-game.onUpdateInterval(500, function () {
+game.onUpdateInterval(2000, function () {
+    for (let value of sprites.allOfKind(SpriteKind.turret)) {
+        B_u_l_L_E_t = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . 1 . . . . . . . . 
+            . . . . . . . 1 . . . . . . . . 
+            . . . . . . . 1 . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, value, 0, -50)
+    }
+})
+game.onUpdateInterval(1000, function () {
     if (can_attack == 1) {
         if (Math.percentChance(25)) {
             asteroid1 = sprites.create(img`
